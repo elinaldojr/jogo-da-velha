@@ -9,19 +9,18 @@ let jogador1 = {class: ".jogador1"}, jogador2 = {class: ".jogador2"};
 inicio();
 
 async function inicio(){
-    await pegarQtdPokemon(URL);
+    //await pegarQtdPokemon(URL);
 
-    jogador1.id = gerarIdAleatorioPokemon(qtd_max_pokemon);
-    jogador2.id = gerarIdAleatorioPokemon(qtd_max_pokemon);
+    jogador1.id = gerarIdAleatorioPokemon(898);
+    jogador2.id = gerarIdAleatorioPokemon(898);
 
     await preencherDadosPokemon(jogador1);
     await preencherDadosPokemon(jogador2);
 
     criarTituloBatalha(jogador1.nome, jogador2.nome);
 
-    desenharPokemon(jogador1)
-    desenharPokemon(jogador2)
-
+    desenharPokemon(jogador1);
+    desenharPokemon(jogador2);
 
     if (jogador1.spd > jogador2.spd)
         mudarJogador(jogador1);
@@ -40,7 +39,6 @@ async function pegarQtdPokemon(URL){
 
 function gerarIdAleatorioPokemon(qtd_max_pokemon) {
     let max = qtd_max_pokemon;
-    max = 898; //existem 1126 pokémon, incluindo as diferentes formas
     return Math.floor(Math.random() * max);
 }
 
@@ -126,8 +124,6 @@ function escolherQuadrado(id) {
     }
 
     quadrado.innerHTML = `<img src="${jogador.img}" alt="${jogador.nome}"/>`;
-    const img_anterior = document.querySelector(`.${jogador.nome}`);
-    jogadorSelecionado.removeChild(img_anterior);
 
     if (jogador === jogador1) {
         jogador = jogador2;
@@ -139,7 +135,7 @@ function escolherQuadrado(id) {
     checaVencedor();
 }
 
-async function mudarJogador(valor) {
+function mudarJogador(valor) {
     const img = document.createElement('img');
     jogador = valor;
     
@@ -147,9 +143,8 @@ async function mudarJogador(valor) {
     img.alt = jogador.nome;
     img.className = jogador.nome;
 
+    jogadorSelecionado.innerHTML = '';
     jogadorSelecionado.appendChild(img);
-
-    
 }
 
 function checaVencedor(){
@@ -232,10 +227,10 @@ function checaSequencia(quadrado1, quadrado2, quadrado3) {
     return eigual;
 }
 
-function reiniciar()
-{
+function reiniciar() {
     vencedor = null;
     vencedorSelecionado.innerHTML = '';
+    jogadorSelecionado.innerHTML = '';
 
     for (var i = 1; i <= 9; i++) {
         var quadrado = document.getElementById(i);
@@ -244,5 +239,25 @@ function reiniciar()
         quadrado.innerHTML = '';
     }
 
-    mudarJogador('X');
+    if (jogador1.spd > jogador2.spd)
+        mudarJogador(jogador1);
+    else 
+        mudarJogador(jogador2);
+}
+
+async function nova_batalha() {
+    jogador1 = {class: ".jogador1"}, jogador2 = {class: ".jogador2"};
+
+    const jog1 = document.querySelector(jogador1.class);
+    jog1.innerHTML = '';
+    
+    const jog2 = document.querySelector(jogador2.class);
+    jog2.innerHTML = '';
+
+    jogadorSelecionado.innerHTML = '';
+    vencedorSelecionado.innerHTML = '';
+
+    await inicio();
+
+    reiniciar();
 }
