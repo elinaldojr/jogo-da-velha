@@ -1,8 +1,34 @@
 var jogador, vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
+const URL = "https://pokeapi.co/api/v2/pokemon/";
+let qtd_max_pokemon;
 
-mudarJogador('X');
+inicio();
+
+async function inicio(){
+    await acessarAPI(URL);
+    console.log(qtd_max_pokemon);
+
+    jog1 = geraIdAleatorioPokemon(qtd_max_pokemon);
+    jog2 = geraIdAleatorioPokemon(qtd_max_pokemon);
+
+    mudarJogador('X');
+}
+
+async function acessarAPI(URL){
+    await fetch(URL)
+        .then(value => value.json())
+        .then(data => {
+            qtd_max_pokemon = data.count
+        })
+        .catch(error => console.log(error))
+}
+
+function geraIdAleatorioPokemon(qtd_max_pokemon) {
+    let max = qtd_max_pokemon;
+    return Math.floor(Math.random() * max);
+}
 
 function escolherQuadrado(id) {
     if (vencedor !== null) {
@@ -27,7 +53,7 @@ function escolherQuadrado(id) {
     checaVencedor();
 }
 
-function mudarJogador(valor) {
+async function mudarJogador(valor) {
     jogador = valor;
     jogadorSelecionado.innerHTML = jogador;
 }
