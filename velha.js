@@ -14,13 +14,19 @@ async function inicio(){
     jogador1.id = gerarIdAleatorioPokemon(qtd_max_pokemon);
     jogador2.id = gerarIdAleatorioPokemon(qtd_max_pokemon);
 
-    await preencherDadosPokemon(jogador1)
-    await preencherDadosPokemon(jogador2)
+    await preencherDadosPokemon(jogador1);
+    await preencherDadosPokemon(jogador2);
+
+    criarTituloBatalha(jogador1.nome, jogador2.nome);
 
     desenharPokemon(jogador1)
     desenharPokemon(jogador2)
 
-    mudarJogador('X');
+
+    if (jogador1.spd > jogador2.spd)
+        mudarJogador(jogador1);
+    else 
+        mudarJogador(jogador2);
 }
 
 async function pegarQtdPokemon(URL){
@@ -57,10 +63,19 @@ async function preencherDadosPokemon(jogador){
         .catch(erro => console.log(erro))
 }
 
+function criarTituloBatalha(pokemon1, pokemon2){
+    const batalha = document.querySelector('.batalha');
+
+    batalha.innerHTML = pokemon1 + ' <i>Vs.</i> ' + pokemon2;
+}
+
 function desenharPokemon(jogador){
+    if (jogador.nome === 'undefined')
+        return; 
+
     const div_jogador = document.querySelector(jogador.class);
     const img = document.createElement('img');
-    const h2 = document.createElement('h2');
+    const h3 = document.createElement('h3');
     const ul = document.createElement('ul');
     const span =document.createElement('span');
 
@@ -88,13 +103,13 @@ function desenharPokemon(jogador){
     spd.innerHTML = `<b>SPD:</b> ${jogador.spd}`;
     ul.appendChild(spd);
 
-    h2.textContent = jogador.nome;
+    h3.textContent = jogador.nome;
     span.textContent = jogador.tipo1;
     span.textContent += jogador.tipo2 !== '' ? "/"+jogador.tipo2 : "";
     img.src = jogador.img;
     img.alt = jogador.nome;
 
-    div_jogador.appendChild(h2);
+    div_jogador.appendChild(h3);
     div_jogador.appendChild(span);
     div_jogador.appendChild(img);
     div_jogador.appendChild(ul);
@@ -106,17 +121,18 @@ function escolherQuadrado(id) {
     }
 
     var quadrado = document.getElementById(id);
-    if (quadrado.innerHTML !== '-') {
+    if (quadrado.innerHTML !== '') {
         return;
     }
 
-    quadrado.innerHTML = jogador;
-    quadrado.style.color = '#000';
+    quadrado.innerHTML = `<img src="${jogador.img}" alt="${jogador.nome}"/>`;
+    const img_anterior = document.querySelector(`.${jogador.nome}`);
+    jogadorSelecionado.removeChild(img_anterior);
 
-    if (jogador === 'X') {
-        jogador = 'O';
+    if (jogador === jogador1) {
+        jogador = jogador2;
     } else {
-        jogador = 'X';
+        jogador = jogador1;
     }
 
     mudarJogador(jogador);
@@ -124,8 +140,16 @@ function escolherQuadrado(id) {
 }
 
 async function mudarJogador(valor) {
+    const img = document.createElement('img');
     jogador = valor;
-    jogadorSelecionado.innerHTML = jogador;
+    
+    img.src = jogador.img;
+    img.alt = jogador.nome;
+    img.className = jogador.nome;
+
+    jogadorSelecionado.appendChild(img);
+
+    
 }
 
 function checaVencedor(){
@@ -201,7 +225,7 @@ function mudaCorQuadrado(quadrado1, quadrado2, quadrado3) {
 function checaSequencia(quadrado1, quadrado2, quadrado3) {
     var eigual = false;
 
-    if (quadrado1.innerHTML !== '-' && quadrado1.innerHTML === quadrado2.innerHTML && quadrado2.innerHTML === quadrado3.innerHTML) {
+    if (quadrado1.innerHTML !== '' && quadrado1.innerHTML === quadrado2.innerHTML && quadrado2.innerHTML === quadrado3.innerHTML) {
         eigual = true;
     }
 
@@ -217,7 +241,7 @@ function reiniciar()
         var quadrado = document.getElementById(i);
         quadrado.style.background = '#eee';
         quadrado.style.color = '#eee';
-        quadrado.innerHTML = '-';
+        quadrado.innerHTML = '';
     }
 
     mudarJogador('X');

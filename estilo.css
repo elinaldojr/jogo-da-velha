@@ -10,23 +10,34 @@ body {
 }
 
 body h1 {
-    padding: 20px 0;
+    padding: 20px 0 0 0;
+    font-size: 40px;
 }
 
 .quadrado {
     text-align: center;
     width: 100px;
     height: 100px;
-    background: #eee;
+    background-color: #eee;
+    padding: 2px;
     display: inline-block;
-    padding: 20px;
-    font-size: 50px;
     margin: 5px;
     cursor: pointer;
     color: #eee;
+    border-radius: 5px;
+}
+
+.quadrado img{
+    margin: 0;
+    padding: 0;
+    display: block;
 }
 
 .jogador, .vencedor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     font-size: 30px;
     margin-top: 10px;
 }
@@ -46,7 +57,12 @@ button {
     align-items: center;
 }
 
-.jogador1 h2, .jogador2 h2 {
+.batalha {
+    text-transform: capitalize;
+    color: #222;
+}
+
+.jogador1 h3, .jogador2 h3 {
     text-transform: capitalize;
 }
 
@@ -61,7 +77,7 @@ button {
 }
 
 .jogador1 img{
-    background: #dfd;
+    background: #ddf;
     border-radius: 5px;
 }
 
