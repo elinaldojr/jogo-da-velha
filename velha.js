@@ -123,7 +123,7 @@ function escolherQuadrado(id) {
         return;
     }
 
-    quadrado.innerHTML = `<img src="${jogador.img}" alt="${jogador.nome}"/>`;
+    quadrado.innerHTML = `<img src="${jogador.img}" alt="${jogador.nome}" />`;
 
     if (jogador === jogador1) {
         jogador = jogador2;
