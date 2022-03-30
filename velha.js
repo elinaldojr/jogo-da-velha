@@ -60,8 +60,9 @@ async function preencherDadosPokemon(jogador){
 function desenharPokemon(jogador){
     const div_jogador = document.querySelector(jogador.class);
     const img = document.createElement('img');
-    const h3 = document.createElement('h3');
+    const h2 = document.createElement('h2');
     const ul = document.createElement('ul');
+    const span =document.createElement('span');
 
     const hp = document.createElement('li');
     hp.innerHTML = `<b>HP:</b> ${jogador.hp}`;
@@ -87,15 +88,14 @@ function desenharPokemon(jogador){
     spd.innerHTML = `<b>SPD:</b> ${jogador.spd}`;
     ul.appendChild(spd);
 
-
-    h3.textContent = jogador.nome;
-
+    h2.textContent = jogador.nome;
+    span.textContent = jogador.tipo1;
+    span.textContent += jogador.tipo2 !== '' ? "/"+jogador.tipo2 : "";
     img.src = jogador.img;
     img.alt = jogador.nome;
 
-
-
-    div_jogador.appendChild(h3);
+    div_jogador.appendChild(h2);
+    div_jogador.appendChild(span);
     div_jogador.appendChild(img);
     div_jogador.appendChild(ul);
 }
