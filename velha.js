@@ -1,33 +1,62 @@
 var jogador, vencedor = null;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
-const URL = "https://pokeapi.co/api/v2/pokemon/";
+const URL = "https://pokeapi.co/api/v2";
 let qtd_max_pokemon;
+
+let jogador1 = {}, jogador2 = {};
 
 inicio();
 
 async function inicio(){
-    await acessarAPI(URL);
-    console.log(qtd_max_pokemon);
+    await pegarQtdPokemon(URL);
 
-    jog1 = geraIdAleatorioPokemon(qtd_max_pokemon);
-    jog2 = geraIdAleatorioPokemon(qtd_max_pokemon);
+    jogador1.id = gerarIdAleatorioPokemon(qtd_max_pokemon);
+    jogador2.id = gerarIdAleatorioPokemon(qtd_max_pokemon);
+
+    await preencherDadosPokemon(jogador1)
+    await preencherDadosPokemon(jogador2)
+
+    console.dir(jogador1)
+    console.log(jogador2)
+
 
     mudarJogador('X');
 }
 
-async function acessarAPI(URL){
-    await fetch(URL)
+async function pegarQtdPokemon(URL){
+    await fetch(`${URL}/pokemon/`)
         .then(value => value.json())
         .then(data => {
             qtd_max_pokemon = data.count
         })
-        .catch(error => console.log(error))
+        .catch(erro => console.log(erro))
 }
 
-function geraIdAleatorioPokemon(qtd_max_pokemon) {
+function gerarIdAleatorioPokemon(qtd_max_pokemon) {
     let max = qtd_max_pokemon;
+    max = 898; //existem 1126 pokémon, incluindo as diferentes formas
     return Math.floor(Math.random() * max);
+}
+
+async function preencherDadosPokemon(jogador){
+    await fetch(`${URL}/pokemon/${jogador.id}`)
+        .then(value => value.json())
+        .then(data => {
+            jogador.nome = data.name;
+            jogador.img = data.sprites.front_default;
+            jogador.tipo1 = data.types[0].type.name;
+            jogador.tipo2 = typeof data.types[1] !== 'undefined' ? data.types[1].type.name : "";
+            jogador.hp = data.stats[0].base_stat;
+            jogador.atk = data.stats[1].base_stat;
+            jogador.def = data.stats[2].base_stat;
+            jogador.spc_atk = data.stats[3].base_stat;
+            jogador.spc_def = data.stats[4].base_stat;
+            jogador.spd = data.stats[5].base_stat;
+            jogador.xp = data.base_experience;
+           
+        })
+        .catch(erro => console.log(erro))
 }
 
 function escolherQuadrado(id) {
