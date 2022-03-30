@@ -208,7 +208,7 @@ function checaVencedor(){
     if (quadrado1.innerHTML !== '' && quadrado2.innerHTML !== '' && quadrado3.innerHTML !== '' &&
         quadrado4.innerHTML !== '' && quadrado5.innerHTML !== '' && quadrado6.innerHTML !== '' &&
         quadrado7.innerHTML !== '' && quadrado8.innerHTML !== '' && quadrado9.innerHTML !== ''){
-            vencedorSelecionado.innerHTML = 'EMPATE!';
+            vencedorSelecionado.innerHTML = '<b>EMPATE!</b>';
             jogadorSelecionado.innerHTML = '';
         }
 }
