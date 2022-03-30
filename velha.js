@@ -4,7 +4,7 @@ var vencedorSelecionado = document.getElementById('vencedor-selecionado');
 const URL = "https://pokeapi.co/api/v2";
 let qtd_max_pokemon;
 
-let jogador1 = {}, jogador2 = {};
+let jogador1 = {class: ".jogador1"}, jogador2 = {class: ".jogador2"};
 
 inicio();
 
@@ -17,9 +17,8 @@ async function inicio(){
     await preencherDadosPokemon(jogador1)
     await preencherDadosPokemon(jogador2)
 
-    console.dir(jogador1)
-    console.log(jogador2)
-
+    desenharPokemon(jogador1)
+    desenharPokemon(jogador2)
 
     mudarJogador('X');
 }
@@ -54,9 +53,51 @@ async function preencherDadosPokemon(jogador){
             jogador.spc_def = data.stats[4].base_stat;
             jogador.spd = data.stats[5].base_stat;
             jogador.xp = data.base_experience;
-           
         })
         .catch(erro => console.log(erro))
+}
+
+function desenharPokemon(jogador){
+    const div_jogador = document.querySelector(jogador.class);
+    const img = document.createElement('img');
+    const h3 = document.createElement('h3');
+    const ul = document.createElement('ul');
+
+    const hp = document.createElement('li');
+    hp.innerHTML = `<b>HP:</b> ${jogador.hp}`;
+    ul.appendChild(hp);
+    
+    const atk = document.createElement('li');
+    atk.innerHTML = `<b>ATK:</b> ${jogador.atk}`;
+    ul.appendChild(atk);
+    
+    const def = document.createElement('li');
+    def.innerHTML = `<b>DEF:</b> ${jogador.def}`;
+    ul.appendChild(def);
+    
+    const spc_atk = document.createElement('li');
+    spc_atk.innerHTML = `<b>SPC ATK:</b> ${jogador.spc_atk}`;
+    ul.appendChild(spc_atk);
+    
+    const spc_def = document.createElement('li');
+    spc_def.innerHTML = `<b>SPC DEF:</b> ${jogador.spc_def}`;
+    ul.appendChild(spc_def);
+    
+    const spd = document.createElement('li');
+    spd.innerHTML = `<b>SPD:</b> ${jogador.spd}`;
+    ul.appendChild(spd);
+
+
+    h3.textContent = jogador.nome;
+
+    img.src = jogador.img;
+    img.alt = jogador.nome;
+
+
+
+    div_jogador.appendChild(h3);
+    div_jogador.appendChild(img);
+    div_jogador.appendChild(ul);
 }
 
 function escolherQuadrado(id) {

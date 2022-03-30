@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        Jogo da velha
+        Pokémon da velha
     </title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilo.css">
@@ -11,51 +11,59 @@
 
 <body>
 
-<h1>
-    Jogo da Velha
-</h1>
+    <h1>
+        Pokémon da Velha
+    </h1>
 
-<div>
-    <div id="1" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-    <div id="2" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-    <div id="3" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-</div>
+    <div class="jogadores-info">
+        <div class="jogador1">
+        </div>
+        
+        <div class="jogador2">
+        </div>
+    </div>
 
-<div>
-    <div id="4" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-    <div id="5" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-    <div id="6" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-</div>
+    <div>
+        <div id="1" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="2" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="3" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+    </div>
 
-<div>
-    <div id="7" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-    <div id="8" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-    <div id="9" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
-</div>
+    <div>
+        <div id="4" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="5" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="6" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+    </div>
 
-<div class="jogador">
-    <label>
-        Jogador:
-    </label>
-    <label id="jogador-selecionado">
+    <div>
+        <div id="7" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="8" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+        <div id="9" class="quadrado" onclick="escolherQuadrado(this.id)">-</div>
+    </div>
 
-    </label>
-</div>
+    <div class="jogador">
+        <label>
+            Jogador:
+        </label>
+        <label id="jogador-selecionado">
 
-<div class="vencedor">
-    <label>
-        Vencedor:
-    </label>
-    <label id="vencedor-selecionado">
+        </label>
+    </div>
 
-    </label>
-</div>
+    <div class="vencedor">
+        <label>
+            Vencedor:
+        </label>
+        <label id="vencedor-selecionado">
 
-<div>
-    <button onclick="reiniciar()">
-        Reiniciar
-    </button>
-</div>
+        </label>
+    </div>
+
+    <div>
+        <button onclick="reiniciar()">
+            Reiniciar
+        </button>
+    </div>
 
 </body>
 
