@@ -204,11 +204,19 @@ function checaVencedor(){
         mudaCorQuadrado(quadrado3, quadrado5, quadrado7);
         mudarVencedor(quadrado3);
     }
+
+    if (quadrado1.innerHTML !== '' && quadrado2.innerHTML !== '' && quadrado3.innerHTML !== '' &&
+        quadrado4.innerHTML !== '' && quadrado5.innerHTML !== '' && quadrado6.innerHTML !== '' &&
+        quadrado7.innerHTML !== '' && quadrado8.innerHTML !== '' && quadrado9.innerHTML !== ''){
+            vencedorSelecionado.innerHTML = 'EMPATE!';
+            jogadorSelecionado.innerHTML = '';
+        }
 }
 
 function mudarVencedor(quadrado) {
     vencedor = quadrado.innerHTML;
     vencedorSelecionado.innerHTML = vencedor;
+    jogadorSelecionado.innerHTML = '';
 }
 
 function mudaCorQuadrado(quadrado1, quadrado2, quadrado3) {
