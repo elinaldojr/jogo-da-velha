@@ -173,59 +173,48 @@ function checaVencedor(){
     var quadrado8 = document.getElementById(8);
     var quadrado9 = document.getElementById(9);
 
+
     if (checaSequencia(quadrado1, quadrado2, quadrado3)) {
         mudaCorQuadrado(quadrado1, quadrado2, quadrado3);
         mudarVencedor(quadrado1);
-        return;
     }
-
-    if (checaSequencia(quadrado4, quadrado5, quadrado6)) {
+    else if (checaSequencia(quadrado4, quadrado5, quadrado6)) {
         mudaCorQuadrado(quadrado4, quadrado5, quadrado6);
         mudarVencedor(quadrado4);
-        return;
     }
-
-    if (checaSequencia(quadrado7, quadrado8, quadrado9)) {
+    else if (checaSequencia(quadrado7, quadrado8, quadrado9)) {
         mudaCorQuadrado(quadrado7, quadrado8, quadrado9);
         mudarVencedor(quadrado7);
-        return;
     }
-
-    if (checaSequencia(quadrado1, quadrado4, quadrado7)) {
+    else if (checaSequencia(quadrado1, quadrado4, quadrado7)) {
         mudaCorQuadrado(quadrado1, quadrado4, quadrado7);
         mudarVencedor(quadrado1);
-        return;
     }
-
-    if (checaSequencia(quadrado2, quadrado5, quadrado8)) {
+    else if (checaSequencia(quadrado2, quadrado5, quadrado8)) {
         mudaCorQuadrado(quadrado2, quadrado5, quadrado8);
         mudarVencedor(quadrado2);
-        return;
     }
-
-    if (checaSequencia(quadrado3, quadrado6, quadrado9)) {
+    else if (checaSequencia(quadrado3, quadrado6, quadrado9)) {
         mudaCorQuadrado(quadrado3, quadrado6, quadrado9);
         mudarVencedor(quadrado3);
-        return;
     }
-
-    if (checaSequencia(quadrado1, quadrado5, quadrado9)) {
+    else if (checaSequencia(quadrado1, quadrado5, quadrado9)) {
         mudaCorQuadrado(quadrado1, quadrado5, quadrado9);
         mudarVencedor(quadrado1);
-        return;
     }
-
-    if (checaSequencia(quadrado3, quadrado5, quadrado7)) {
+    else if (checaSequencia(quadrado3, quadrado5, quadrado7)) {
         mudaCorQuadrado(quadrado3, quadrado5, quadrado7);
         mudarVencedor(quadrado3);
     }
-
+    
     if (quadrado1.innerHTML !== '' && quadrado2.innerHTML !== '' && quadrado3.innerHTML !== '' &&
         quadrado4.innerHTML !== '' && quadrado5.innerHTML !== '' && quadrado6.innerHTML !== '' &&
         quadrado7.innerHTML !== '' && quadrado8.innerHTML !== '' && quadrado9.innerHTML !== ''){
-            vencedorSelecionado.innerHTML = '<b>EMPATE!</b>';
             jogadorSelecionado.innerHTML = '';
     }
+    
+    let frase = 'Eu amo batalhas Pokémon! O que vimos aqui hoje entrará para a hitória!';
+    escreverFrase(frase, 'comentario');
 }
 
 function mudarVencedor(quadrado) {
