@@ -239,8 +239,6 @@ function checaVencedor(){
             frase = 'Uou! Temos um empate senhoras e senhores!!!';
             escreverFrase(frase, 'comentario');
     }
-    
-    
 }
 
 function mudarVencedor(quadrado) {
