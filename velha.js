@@ -145,6 +145,8 @@ function mudarJogador(valor) {
 
     jogadorSelecionado.innerHTML = '';
     jogadorSelecionado.appendChild(img);
+
+    escreverFrase();
 }
 
 function checaVencedor(){
@@ -210,7 +212,7 @@ function checaVencedor(){
         quadrado7.innerHTML !== '' && quadrado8.innerHTML !== '' && quadrado9.innerHTML !== ''){
             vencedorSelecionado.innerHTML = '<b>EMPATE!</b>';
             jogadorSelecionado.innerHTML = '';
-        }
+    }
 }
 
 function mudarVencedor(quadrado) {
@@ -268,4 +270,16 @@ async function nova_batalha() {
     await inicio();
 
     reiniciar();
+}
+
+
+function escreverFrase(){
+    fetch("frases.json")
+        .then(value => value.json())
+        .then(data => {
+            const qtd_frases = data.cont;
+            const id_frase = Math.floor(Math.random() * qtd_frases);
+            console.log(data.frases[id_frase].frase);
+        })
+        .catch(erro => console.log(erro))
 }

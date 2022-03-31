@@ -1,0 +1,259 @@
+{
+   "cont": 63,
+   "frases": [
+      {
+         "frase": "Uma estratégia inteligente é a chave para a vitória hoje.",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "Foi um golpe poderoso! Parece que a desvantagem de tipo não teve efeito.",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Isso foi brutal!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "A batalha está esquentando e a empolgação da multidão está aumentando junto!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Um brilho intimidador.",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Essa é a quarta rodada.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Oh! o ataque falhou!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Ele ainda está afim de lutar, mas o oponente parece derrotado!",
+         "fase_partida": "acabando"
+      },
+      {
+         "frase": "Essa batalha parece promissora.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Uou! Isso foi um ataque crítico!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Parece que o pokémon ainda está sentindo o último golpe.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Esta é uma luta entre dois tipos diferentes de pokémon.",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Isso não foi muito efetivo!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Sim! Parece que a estratégia está funcionando!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Que reviravolta selvagem de eventos!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Oh! Um grito horrível!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Acabou o tempo! A batalha acabou!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Caiu! Isso não demorou muito!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Ele é mais resistente a golpes físicos.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Hoje temos uma grande batalha de Pokémon com uma mistura desconcertante de movimentos!",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Este confronto tornou-se unilateral.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Não é muito eficaz.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Como a diferença de tipo afetará a batalha?",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Estamos prontos para começar! Torneio Pokémon da Velha! A emoção continua a crescer aqui na arena. Que comecem as batalhas!",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "Aqui está o primeiro movimento!",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Parabéns!! O campeão foi decidido!!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Vamos ver o que o desafiante tem reservado para ele!",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Todos esperam ver estratégias e táticas brilhantes de Pokémon!",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Ele vai precisar de um grande esforço para vencer!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Parabéns!!! O campeão foi decidido!!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "A ação foi pesada desde o início!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Estamos chegando ao fim.",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "O que o outro lado fará?",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "É uma colisão frontal: poder versus poder!",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Eles entram em poses de batalha.",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Ai! Ele está pronto para cair!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Não há nada que você possa fazer agora.",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Quem será o Pokémon para vencer tudo?",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "Ambos os Pokémon sofreram danos pesados.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Ambos os Pokémon parecem fracos.",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Trazemos-lhe esta batalha ao vivo. Como nosso intrépido desafiante enfrentará o melhor dos melhores?",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "Ambos os combatentes ainda têm muito gás!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Aqui está a terceira batalha de treinador com apenas o líder do ginásio depois disso. Que tipo de batalha podemos esperar ver?",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "Acertou o ponto fraco!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Vamos ver quanta luta o Pokémon mais fofo pode aguentar.",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Os Pokémon são tipos totalmente diferentes.",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Estamos finalmente em andamento com o torneio! Qual Pokémon irá para casa com o troféu de campeão desta vez?",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "Nanda apagará a humilhação de seu oponente caído!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "As batalhas começam sob os aplausos de uma multidão entusiasmada!",
+         "fase_partida": "abertura"
+      },
+      {
+         "frase": "A tensa batalha continua.",
+         "fase_partida": "meio"
+      },
+
+      {
+         "frase": "Apenas um Pokémon continua de pé. Temos um novo campeão!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Será que eles ainda têm fôlego para continuar?",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Foi um golpe arrasador!!!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Os dois Pokémon estão no chão. Não teremos vencedores hoje!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Os dois Pokémon não podem mais batalhar! Alguém sabe o que isso quer dizer?",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Que reviravolta incrível!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "Uau! A batalha começou a todo vapor. Todos estão empolgados nas arquibancadas!",
+         "fase_partida": "inicio"
+      },
+      {
+         "frase": "Não posso acreditar no que estou vendo. Isso realmente está acontecendo?",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "Ele está adotando uma estratégia arriscada!",
+         "fase_partida": "meio"
+      },
+      {
+         "frase": "É isso mesmo, ele venceu! ",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Ele mal consegue ficar de pé!",
+         "fase_partida": "final"
+      },
+      {
+         "frase": "É um empate! Creio que todos vão para casa satisfeitos hoje!",
+         "fase_partida": "encerramento"
+      },
+      {
+         "frase": "Parece que a maioria está apostando nele hoje!",
+         "fase_partida": "inicio"
+      }
+
+   ]
+}
