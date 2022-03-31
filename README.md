@@ -19,6 +19,7 @@ Chame um amigo e descubra quem é o melhor de todos. [Jogar agora](https://elina
 - [ ] Contabilizar número de vitórias de cada time;
 - [ ] Salvar histórico das partidas;
 - [ ] Permitir batalhas 2x2 e 3x3;
+- [ ] Implementar versão responsiva;
 - [ ] Refatorar código;
 
 ...
