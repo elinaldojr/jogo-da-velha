@@ -150,3 +150,13 @@ button.nova_batalha:hover {
 .narracao ul li.comentario {
     padding-top: 10px;
 }
+
+.narracao span {
+    border-top: 1px solid white;
+    margin-top: 10px;
+    padding-top: 5px;
+    width: 100%;
+    font-size: 12px;
+    display: block;
+    font-style: italic;
+}
