@@ -14,10 +14,13 @@ Chame um amigo e descubra quem é o melhor de todos. [Jogar agora](https://elina
 - [x] Permitir reiniciar a batalha com os mesmos Pokémon;
 - [x] Identificar situação de empate;
 - [x] Criar sistema de narração dinâmica;
+- [ ] Incluir mensagem de carregamento enquanto espera resposta da API;
 - [ ] Implementar sistema de pontos;
 - [ ] Contabilizar número de vitórias de cada time;
 - [ ] Salvar histórico das partidas;
 - [ ] Permitir batalhas 2x2 e 3x3;
+- [ ] Refatorar código;
+
 ...
 
 ## Descrição
