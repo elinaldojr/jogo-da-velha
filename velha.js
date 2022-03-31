@@ -206,7 +206,7 @@ function checaVencedor(){
     if (checaSequencia(quadrado2, quadrado5, quadrado8)) {
         mudaCorQuadrado(quadrado2, quadrado5, quadrado8);
         mudarVencedor(quadrado2);
-        frase = 'Chegamos ao fim! Tenho certeza que todos aprenderam muit com essa batalha!';
+        frase = 'Chegamos ao fim! Tenho certeza que todos aprenderam muito com essa batalha!';
         escreverFrase(frase, 'comentario');
         return;
     }
