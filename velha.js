@@ -236,6 +236,7 @@ function checaVencedor(){
         quadrado4.innerHTML !== '' && quadrado5.innerHTML !== '' && quadrado6.innerHTML !== '' &&
         quadrado7.innerHTML !== '' && quadrado8.innerHTML !== '' && quadrado9.innerHTML !== ''){
             jogadorSelecionado.innerHTML = '';
+            vencedorSelecionado.innerHTML = '<b>EMPATE!</b>';
             frase = 'Uou! Temos um empate senhoras e senhores!!!';
             escreverFrase(frase, 'comentario');
     }
@@ -335,9 +336,9 @@ function gerarFraseComentario(){
                 fase = "inicio";
             else if (rodada >= 4 && rodada <= 6) 
                 fase = "meio";
-            else if (rodada >= 7 && rodada <= 9) 
+            else if (rodada >= 7 && rodada <= 8) 
                 fase = "final";
-            else 
+            else if (rodada === 9)
                 fase = "encerramento";
 
             data.frases.forEach(item => {
