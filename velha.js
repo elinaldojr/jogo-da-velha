@@ -57,6 +57,11 @@ async function preencherDadosPokemon(jogador){
             jogador.spc_def = data.stats[4].base_stat;
             jogador.spd = data.stats[5].base_stat;
             jogador.xp = data.base_experience;
+
+            jogador.moves = [];
+            data.moves.forEach(item => {
+                jogador.moves.push(item.move.name)
+            })
         })
         .catch(erro => console.log(erro))
 }
@@ -271,7 +276,6 @@ async function nova_batalha() {
 
     reiniciar();
 }
-
 
 function escreverFrase(){
     fetch("frases.json")
