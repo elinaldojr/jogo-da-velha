@@ -30,8 +30,8 @@
          "fase_partida": "meio"
       },
       {
-         "frase": "Ele ainda está afim de lutar, mas o oponente parece derrotado!",
-         "fase_partida": "acabando"
+         "frase": "Ele ainda está afim de lutar, mas o oponente já parece derrotado!",
+         "fase_partida": "final"
       },
       {
          "frase": "Essa batalha parece promissora.",
@@ -251,7 +251,7 @@
          "fase_partida": "encerramento"
       },
       {
-         "frase": "Parece que a maioria está apostando nele hoje!",
+         "frase": "Parece que a maioria está apostando contra ele hoje!",
          "fase_partida": "inicio"
       }
 

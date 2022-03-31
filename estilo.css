@@ -124,3 +124,29 @@ button.nova_batalha:hover {
     margin-left: 50px;
     margin-right: 50px;
 }
+
+.narracao {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #eee;
+    width: 300px;
+    height: auto;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+.narracao ul {
+    list-style-type: none;
+}
+
+.narracao ul li {
+    color: #555;
+    font-size: 12px;
+    text-align: left;
+}
+
+.narracao ul li.comentario {
+    padding-top: 10px;
+}

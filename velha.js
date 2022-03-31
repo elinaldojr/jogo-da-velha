@@ -1,4 +1,5 @@
 var jogador, vencedor = null;
+let rodada = 0;
 var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
 const URL = "https://pokeapi.co/api/v2";
@@ -10,6 +11,7 @@ inicio();
 
 async function inicio(){
     //await pegarQtdPokemon(URL);
+    const lista_frases = document.querySelector('.falas');
 
     jogador1.id = gerarIdAleatorioPokemon(898);
     jogador2.id = gerarIdAleatorioPokemon(898);
@@ -26,6 +28,9 @@ async function inicio(){
         mudarJogador(jogador1);
     else 
         mudarJogador(jogador2);
+
+    let frase = 'Olá senhoras e senhores! Parece que teremos uma incrível batalha Pokémon aqui hoje!';
+    escreverFrase(frase, 'comentario');
 }
 
 async function pegarQtdPokemon(URL){
@@ -130,14 +135,17 @@ function escolherQuadrado(id) {
 
     quadrado.innerHTML = `<img src="${jogador.img}" alt="${jogador.nome}" />`;
 
+    escreverFrase(gerarFraseGolpe(jogador));
     if (jogador === jogador1) {
         jogador = jogador2;
     } else {
         jogador = jogador1;
     }
-
+    
     mudarJogador(jogador);
     checaVencedor();
+    
+    rodada++;
 }
 
 function mudarJogador(valor) {
@@ -151,7 +159,7 @@ function mudarJogador(valor) {
     jogadorSelecionado.innerHTML = '';
     jogadorSelecionado.appendChild(img);
 
-    escreverFrase();
+    gerarFraseComentario();
 }
 
 function checaVencedor(){
@@ -243,6 +251,10 @@ function checaSequencia(quadrado1, quadrado2, quadrado3) {
 }
 
 function reiniciar() {
+    const lista_frases = document.querySelector('.falas');
+    lista_frases.innerHTML = '';
+
+    rodada = 0;
     vencedor = null;
     vencedorSelecionado.innerHTML = '';
     jogadorSelecionado.innerHTML = '';
@@ -277,13 +289,63 @@ async function nova_batalha() {
     reiniciar();
 }
 
-function escreverFrase(){
+function capitalizarPrimeiraLetra(palavra) {
+    return palavra.charAt(0).toUpperCase() + palavra.slice(1);
+  }
+
+function escreverFrase(frase, classe = ''){
+    const lista_frases = document.querySelector('.falas');
+    const li = document.createElement('li');
+
+    li.innerHTML = frase;
+    li.className = classe;
+
+    lista_frases.prepend(li)
+}
+
+function gerarFraseComentario(){
     fetch("frases.json")
         .then(value => value.json())
         .then(data => {
-            const qtd_frases = data.cont;
+            let frase = '';
+            const frases = [];
+            frases['abertura'] = [];
+            frases['inicio'] = [];
+            frases['meio'] = [];
+            frases['final'] = [];
+            frases['encerramento'] = [];
+
+            let fase = "";
+            if (rodada === 0) 
+                fase = "abertura";
+            else if (rodada >= 1 && rodada <= 3) 
+                fase = "inicio";
+            else if (rodada >= 4 && rodada <= 6) 
+                fase = "meio";
+            else if (rodada >= 7 && rodada <= 9) 
+                fase = "final";
+            else 
+                fase = "encerramento";
+
+            data.frases.forEach(item => {
+                frases[item.fase_partida].push(item.frase);
+            });
+
+            const qtd_frases = frases[fase].length;
             const id_frase = Math.floor(Math.random() * qtd_frases);
-            console.log(data.frases[id_frase].frase);
+            frase = frases[fase][id_frase];
+
+            escreverFrase(frase, 'comentario');
         })
-        .catch(erro => console.log(erro))
+        .catch(erro => console.log(erro));
+}
+
+
+function gerarFraseGolpe(jogador){
+    let frase = '';
+    const qtd_moves = jogador.moves.length;
+    const id_move = Math.floor(Math.random() * qtd_moves);
+    frase = "<b>" + capitalizarPrimeiraLetra(jogador.nome) + "</b> usou <i>" + capitalizarPrimeiraLetra(jogador.moves[id_move]) + "</i>.";
+
+    return frase;
 }
