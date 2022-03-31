@@ -173,48 +173,66 @@ function checaVencedor(){
     var quadrado8 = document.getElementById(8);
     var quadrado9 = document.getElementById(9);
 
+    let frase = ''; 
 
     if (checaSequencia(quadrado1, quadrado2, quadrado3)) {
         mudaCorQuadrado(quadrado1, quadrado2, quadrado3);
         mudarVencedor(quadrado1);
+        frase = 'Eu amo batalhas Pokémon! O que vimos aqui hoje entrará para a hitória!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado4, quadrado5, quadrado6)) {
         mudaCorQuadrado(quadrado4, quadrado5, quadrado6);
         mudarVencedor(quadrado4);
+        frase = 'Minha nossa! Com certeza ninguém podia esperar que a batalha terminaria assim!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado7, quadrado8, quadrado9)) {
         mudaCorQuadrado(quadrado7, quadrado8, quadrado9);
         mudarVencedor(quadrado7);
+        frase = 'Incrível! Essa batalha foi memorável!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado1, quadrado4, quadrado7)) {
         mudaCorQuadrado(quadrado1, quadrado4, quadrado7);
         mudarVencedor(quadrado1);
+        frase = 'Não foi uma batalha muito emocionante, mas temos um vencedor!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado2, quadrado5, quadrado8)) {
         mudaCorQuadrado(quadrado2, quadrado5, quadrado8);
         mudarVencedor(quadrado2);
+        frase = 'Chegamos ao fim! Tenho certeza que todos aprenderam muit com essa batalha!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado3, quadrado6, quadrado9)) {
         mudaCorQuadrado(quadrado3, quadrado6, quadrado9);
         mudarVencedor(quadrado3);
+        frase = 'Não acredito no que vi hoje. Estou muito feliz de poder trabalhar com isso!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado1, quadrado5, quadrado9)) {
         mudaCorQuadrado(quadrado1, quadrado5, quadrado9);
         mudarVencedor(quadrado1);
+        frase = 'Chegamos ao fim. O campeão é aplaudido de pé pelo público!';
+        escreverFrase(frase, 'comentario');
     }
     else if (checaSequencia(quadrado3, quadrado5, quadrado7)) {
         mudaCorQuadrado(quadrado3, quadrado5, quadrado7);
         mudarVencedor(quadrado3);
+        frase = 'Terminou!!! Ele com certeza sabia que seria o campeão!';
+        escreverFrase(frase, 'comentario');
     }
     
     if (quadrado1.innerHTML !== '' && quadrado2.innerHTML !== '' && quadrado3.innerHTML !== '' &&
         quadrado4.innerHTML !== '' && quadrado5.innerHTML !== '' && quadrado6.innerHTML !== '' &&
         quadrado7.innerHTML !== '' && quadrado8.innerHTML !== '' && quadrado9.innerHTML !== ''){
             jogadorSelecionado.innerHTML = '';
+            frase = 'Uou! Temos um empate senhoras e senhores!!!';
+            escreverFrase(frase, 'comentario');
     }
     
-    let frase = 'Eu amo batalhas Pokémon! O que vimos aqui hoje entrará para a hitória!';
-    escreverFrase(frase, 'comentario');
+    
 }
 
 function mudarVencedor(quadrado) {
