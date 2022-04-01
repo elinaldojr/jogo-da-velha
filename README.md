@@ -2,6 +2,8 @@
 
 Toda emoção das batalhas Pokémon com o toque clássico de competitividade do jogo da velha.
 
+![](img/gif_pokemon.gif)
+
 ## Jogue a versão online
 
 Chame um amigo e descubra quem é o melhor de todos. [Jogar agora](https://elinaldojr.github.io/pokemon-da-velha/)
